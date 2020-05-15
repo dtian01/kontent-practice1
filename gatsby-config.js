@@ -13,6 +13,15 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: '@kentico/gatsby-source-kontent',
+      options: {
+        projectId: '71fb2b76-0e25-00af-1b74-6fa6edc2d73d', // Fill in your Project ID
+        languageCodenames: [
+          'default', // Languages in your project (Project settings -> Localization),
+        ],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content/blog`,

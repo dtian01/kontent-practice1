@@ -11,17 +11,17 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const posts = data.allKontentItemTestLandingPage.nodes
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", padding: "1rem" }}>
-      {posts.map(item => {
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", padding: "1rem", gap: "2rem", margin: "5rem" }}>
+      {posts.map((item, i) => {
         console.log(item.elements)
         return (
-          <div>
+          <div key={i}>
             <img src={item.elements.location_image.value[0].url} />
             <div dangerouslySetInnerHTML={{ __html: item.elements.description_text.value }}></div>
           </div>
         )
       })}
-    </div>
+    </div >
   )
 }
 

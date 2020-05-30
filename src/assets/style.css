@@ -1,3 +1,21 @@
-#test td {
-  border: 0;
+@tailwind base;
+@tailwind components;
+img {
+  @apply w-full
 }
+section.section__b {
+  & > div {
+    padding: 3rem;
+  }
+}
+section.section__d {
+  img {
+    @apply rounded-full w-40;
+  }
+}
+section.section__f {
+  img {
+    @apply rounded-full w-40;
+  }
+}
+@tailwind utilities;

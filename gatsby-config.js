@@ -12,6 +12,15 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        develop: false,
+        tailwind: true
+      }
+    },
     {
       resolve: '@kentico/gatsby-source-kontent',
       options: {

@@ -27,6 +27,7 @@ const Page2 = () => {
       .get("https://deliver.kontent.ai/71fb2b76-0e25-00af-1b74-6fa6edc2d73d/items/untitled_content_item_0b151c8")
       .then(res => {
         setComponentState(res.data.item);
+        console.log(componentState);
         setLoading(false);
       })
   }

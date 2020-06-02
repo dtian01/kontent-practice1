@@ -33,6 +33,7 @@ img {
 section.section__a {
   img {
     height: 500px;
+    object-fit: cover;
   }
 }
 section.section__b {

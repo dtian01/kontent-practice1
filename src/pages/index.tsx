@@ -11,7 +11,7 @@ const BlogIndex = ({ data, location }: PageProps<Data>) => {
   const posts = data.allKontentItemTestLandingPage.nodes
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", padding: "1rem", gap: "2rem", margin: "5rem" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", padding: "1rem", gap: "2rem", margin: "5rem auto", maxWidth: "960px" }}>
       {posts.map((item, i) => {
         console.log(item.elements)
         return (

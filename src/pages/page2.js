@@ -21,14 +21,17 @@ const Page2 = () => {
 
   const [componentState, setComponentState] = useState({});
   const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
+  const fetchData = () => {
+    setLoading(true);
     axios
       .get("https://deliver.kontent.ai/71fb2b76-0e25-00af-1b74-6fa6edc2d73d/items/untitled_content_item_0b151c8")
       .then(res => {
         setComponentState(res.data.item);
         setLoading(false);
       })
+  }
+  useEffect(() => {
+    fetchData();
   }, [])
 
 
@@ -37,9 +40,9 @@ const Page2 = () => {
     <div className="container mx-auto">
       <section className="section__a mb-10" dangerouslySetInnerHTML={{ __html: sectionA.value }}></section>
 
-      <p className="bg-red-500 text-white p-5 text-lg mb-4">&uarr;data pulled from kontent api at build time&uarr;</p>
+      <p className="bg-red-500 text-white p-5 text-lg mb-4">&uarr; data pulled from kontent api at build time (static data) &uarr;</p>
 
-      <p className="bg-blue-500 text-white p-5 text-lg mb-4">&darr;data pulled from kontent api at run time&darr;</p>
+      <p className="bg-blue-500 text-white p-5 text-lg mb-4">&darr; data pulled from kontent api at run time (dynamic data) &darr; <a style={{ cursor: "pointer" }} onClick={fetchData}>Fetch Again</a></p>
 
       <div style={{ position: "relative" }} className={loading ? "spinner" : ""}>
         {componentState && componentState.elements && (
